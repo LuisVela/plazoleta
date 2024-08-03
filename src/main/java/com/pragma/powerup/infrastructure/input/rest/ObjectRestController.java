@@ -32,7 +32,7 @@ public class ObjectRestController {
             @ApiResponse(responseCode = "201", description = "Object created", content = @Content),
             @ApiResponse(responseCode = "409", description = "Object already exists", content = @Content)
     })
-    //@Authorization(Role = "Administrator")
+    //@Authorization(Role = "Administrator") Verificar Git
     @PostMapping("/")
     public ResponseEntity<Void> saveObject(@RequestBody ObjectRequestDto objectRequestDto) {
         objectHandler.saveObject(objectRequestDto);
