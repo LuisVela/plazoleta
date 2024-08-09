@@ -19,15 +19,10 @@ public class UserHandler implements IUserHandler {
     private final IUserRequestMapper userRequestMapper;
     //private final IUserResponseMapper userResponseMapper;
 
-    @Override
-    public void saveUser(UserRequestDto userRequestDto) {
-        UserModel userModel = userRequestMapper.toObject(userRequestDto);
-        userService.saveUser(userModel);
-    }
 
     @Override
-    public ResponseDto<Boolean> saveUser2(UserRequestDto userRequestDto) {
+    public ResponseDto<Boolean> saveUser(UserRequestDto userRequestDto) {
         UserModel userModel = userRequestMapper.toObject(userRequestDto);
-        return userService.saveUser2(userModel);
+        return userService.saveUser(userModel);
     }
 }

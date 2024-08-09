@@ -17,24 +17,20 @@ import java.util.Collections;
 @AllArgsConstructor
 public class UserUseCase implements IUserServicePort {
     private final IUserPersistencePort userPersistencePort;
-    private final IEncryptPort encryptPort;
+    //private final IEncryptPort encryptPort;
 
     @Override
-    public void saveUser(UserModel userModel) {
-        userPersistencePort.saveUser(userModel);
-    }
-
-    @Override
-    public ResponseDto<Boolean> saveUser2(UserModel userModel) {
+    public ResponseDto<Boolean> saveUser(UserModel userModel) {
         if (!isAdult(userModel.getFechaNacimiento())) {
             return new ResponseDto<>(400, false, Collections.singletonList(Constants.YOUNGER));
         }
-        String encryptedPassword = encryptPort.encodePassword(userModel.getClave());
+        //String encryptedPassword = encryptPort.encodePassword(userModel.getClave());
         RoleModel roleModel = new RoleModel();
         roleModel.setId(Constants.ID_ROLE_OWNER);
         userModel.setRole(roleModel);
-        userModel.setClave(encryptedPassword);
+        //userModel.setClave(encryptedPassword);
         userPersistencePort.saveUser(userModel);
+
         return new ResponseDto<>(HttpStatus.OK.value(), true, null);
     }
 

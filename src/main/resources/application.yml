@@ -11,5 +11,11 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+  security:
+    user:
+      name: user
+      password: 1234
+
 appDescription: "Pragma Powerup"
 appVersion: "1.0.0"

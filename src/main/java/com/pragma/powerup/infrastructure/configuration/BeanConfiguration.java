@@ -11,7 +11,7 @@ import com.pragma.powerup.infrastructure.out.jpa.repository.IUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 //Revisar uso de Bean
 @Configuration
@@ -25,14 +25,14 @@ public class BeanConfiguration {
         return new UserJpaAdapter(userRepository, userEntityMapper);
     }
 
-    @Bean
-    public IEncryptPort encryptPort() {
-        return new EncryptAdapter(new BCryptPasswordEncoder());
-    }
+//    @Bean
+//    public IEncryptPort encryptPort() {
+//        return new EncryptAdapter(new BCryptPasswordEncoder());
+//    }
 
     @Bean
     public IUserServicePort userServicePort() {
-        return new UserUseCase(userPersistencePort(), encryptPort());
+        return new UserUseCase(userPersistencePort());//);
     }
 
 
