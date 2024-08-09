@@ -9,7 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ObjectModel {
-    private Long id;
-    private String name;
+public class RoleModel {
+    private Integer id;
+    private String nombre;
+    private String descripcion;
 }
