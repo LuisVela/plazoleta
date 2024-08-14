@@ -22,7 +22,13 @@ public class UserHandler implements IUserHandler {
 
     @Override
     public ResponseDto<Boolean> saveUser(UserRequestDto userRequestDto) {
-        UserModel userModel = userRequestMapper.toObject(userRequestDto);
+        UserModel userModel = userRequestMapper.toUser(userRequestDto);
         return userService.saveUser(userModel);
+    }
+
+    @Override
+    public ResponseDto<Boolean> saveEmployee(UserRequestDto userRequestDto) {
+        UserModel userModel = userRequestMapper.toUser(userRequestDto);
+        return userService.saveEmployee(userModel);
     }
 }

@@ -53,7 +53,7 @@ public class UserEntity {
     private String clave;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_rol", nullable = false)
     private RoleEntity idRol;
 
