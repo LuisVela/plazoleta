@@ -13,6 +13,6 @@ import java.util.List;
 )
 public interface IRoleEntityMapper {
     RoleEntity toEntity(RoleModel roleModel);
-    RoleModel toObjectModel(RoleEntity roleEntity);
+    RoleModel toRoleModel(RoleEntity roleEntity);
     List<RoleModel> toObjectModelList(List<RoleEntity> roleEntities);
 }

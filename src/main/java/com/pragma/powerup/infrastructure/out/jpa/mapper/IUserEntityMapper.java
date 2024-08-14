@@ -18,6 +18,7 @@ import java.util.List;
 public interface IUserEntityMapper {
     @Mapping(source = "role", target = "idRol", qualifiedByName = "mapRole")
     UserEntity toEntity(UserModel user);
+    @Mapping(source = "idRol", target = "role", qualifiedByName = "mapRoleModel")
     UserModel toUserModel(UserEntity userEntity);
     List<UserModel> toUserModelList(List<UserEntity> userEntities);
 
@@ -25,6 +26,14 @@ public interface IUserEntityMapper {
     default RoleEntity mapIdToRole(RoleModel role) {
         RoleEntity roleEntity = new RoleEntity();
         roleEntity.setId(role.getId());
+        return roleEntity;
+    }
+
+    @Named("mapRoleModel")
+    default RoleModel mapIdToRole(RoleEntity role) {
+        RoleModel roleEntity = new RoleModel();
+        roleEntity.setId(role.getId());
+        roleEntity.setNombre(role.getNombre());
         return roleEntity;
     }
 }

@@ -12,10 +12,9 @@ spring:
       ddl-auto: update
     show-sql: true
 
-  security:
-    user:
-      name: user
-      password: 1234
+jwt:
+  secret: "921c4095e8f1a1e1242baa08b1cf475dbad416f901e29c53544d1a61eb6622ba"
+  expiration: "AUTH0JWT-BACKEND"
 
 appDescription: "Pragma Powerup"
 appVersion: "1.0.0"

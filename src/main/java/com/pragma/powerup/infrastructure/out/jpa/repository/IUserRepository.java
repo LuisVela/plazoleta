@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IUserRepository extends JpaRepository<UserEntity, Long> {
     UserEntity findByNumeroDocumento(String numeroDocumento);
+    UserEntity findByCorreo(String correo);
 }

@@ -5,4 +5,5 @@ import com.pragma.powerup.domain.model.UserModel;
 
 public interface IUserServicePort {
     ResponseDto<Boolean> saveUser(UserModel userModel);
+    ResponseDto<Boolean> saveEmployee(UserModel userModel);
 }

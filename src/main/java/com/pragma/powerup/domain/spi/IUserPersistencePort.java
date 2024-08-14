@@ -4,5 +4,5 @@ import com.pragma.powerup.domain.model.UserModel;
 
 public interface IUserPersistencePort {
     UserModel saveUser(UserModel userModel);
-
+    UserModel getUserByEmail(String email);
 }

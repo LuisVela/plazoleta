@@ -12,5 +12,5 @@ import org.mapstruct.*;
         unmappedSourcePolicy = ReportingPolicy.IGNORE)
 
 public interface IUserRequestMapper {
-    UserModel toObject(UserRequestDto userRequestDto);
+    UserModel toUser(UserRequestDto userRequestDto);
 }

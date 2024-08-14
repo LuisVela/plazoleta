@@ -6,4 +6,5 @@ import com.pragma.powerup.application.dto.response.ResponseDto;
 
 public interface IUserHandler {
     ResponseDto<Boolean> saveUser(UserRequestDto userRequestDto);
+    ResponseDto<Boolean> saveEmployee(UserRequestDto userRequestDto);
 }
