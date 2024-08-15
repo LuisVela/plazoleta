@@ -9,9 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryModel {
+public class DishUpdateModel {
     private Integer id;
-    private String nombre;
     private String descripcion;
-
+    private Double precio;
 }

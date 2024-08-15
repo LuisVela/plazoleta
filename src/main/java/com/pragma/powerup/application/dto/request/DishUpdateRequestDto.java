@@ -5,13 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class DishRequestDto {
+public class DishUpdateRequestDto {
     private int id;
-    private String nombre;
     private String descripcion;
     private double precio;
-    private String urlImagen;
-    private byte activo;
-    private int idCategory;
-    private int idRestaurant;
 }

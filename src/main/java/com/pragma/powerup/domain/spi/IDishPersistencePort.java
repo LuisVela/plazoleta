@@ -4,4 +4,5 @@ import com.pragma.powerup.domain.model.DishModel;
 
 public interface IDishPersistencePort {
     DishModel saveDish(DishModel dishModel);
+    DishModel getDishById(int id);
 }
